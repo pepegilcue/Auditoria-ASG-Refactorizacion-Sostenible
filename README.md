@@ -1,6 +1,8 @@
 # **Auditoría ASG y Refactorización Sostenible**
 
-**Empresa auditada:** Auténtico Döner Kebap **URL:** https://www.autenticodonerkebap.com **Módulo:** Sostenibilidad Aplicada al Sistema Productivo **Autor:** *(Pepe Gil Cué)* **Fecha:** 6 Mayo de 2026
+**Empresa auditada:** Auténtico Döner Kebap **URL:** https://www.autenticodonerkebap.com 
+**Módulo:** Sostenibilidad Aplicada al Sistema Productivo 
+**Autor:** *(Pepe Gil Cué)* **Fecha:** 6 Mayo de 2026
 
 ## **Fase 1 \ Dimensión Ambiental (A)**
 

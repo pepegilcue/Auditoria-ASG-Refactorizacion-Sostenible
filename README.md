@@ -2,7 +2,7 @@
 
 **Empresa auditada:** Auténtico Döner Kebap **URL:** https://www.autenticodonerkebap.com **Módulo:** Sostenibilidad Aplicada al Sistema Productivo — Unidad 6 **Autor:** *(Pepe Gil Cué)* **Fecha:** 6 Mayo de 2026
 
-## **Fase 1 \- Dimensión Ambiental (A)**
+## **Fase 1 \ Dimensión Ambiental (A)**
 
 ### **Medición inicial**
 
@@ -16,9 +16,9 @@ Para esta parte usé Website Carbon Calculator y también Lighthouse desde Chrom
 
 Según Website Carbon, lo recomendable es no superar los 0,5 g de CO₂ por visita, así que esta web lo supera por mucho.
 
-*![][image1]*
+<img width="1248" height="739" alt="Captura de pantalla 2026-05-13 124756" src="https://github.com/user-attachments/assets/ea8776c5-0258-48ca-a897-c06660399f46" />
 
-*![][image2]*
+<img width="1028" height="733" alt="Captura de pantalla 2026-05-13 131103" src="https://github.com/user-attachments/assets/8348e9c9-3abc-492c-87db-4915e90d96b5" />
 
 ### **Identificación de Bloatware**
 
@@ -38,18 +38,19 @@ Sí, y bastante. El principal problema de esta web es que está hecha con Wix, q
 
 Además las imágenes, aunque Wix las sirve con algo de compresión automática, siguen siendo bastante pesadas y en algunos casos se descargan a resoluciones mayores de las necesarias. Todo esto hace que la web tarde bastante en cargar y tenga un impacto de carbono mucho más alto del que debería.
 
-## **Fase 2 — Dimensión Social y Equidad** 
+## **Fase 2 \ Dimensión Social y Equidad** 
 
 ### **Test de accesibilidad**
 
 Usé WAVE y la pestaña Accessibility de Lighthouse.
 
 | Herramienta | Resultado |
-| ----- | ----- |
-| WAVE | Varios errores en imágenes y estructura |
-| Lighthouse Accessibility | Puntuación por debajo de 80 |
+|---|---|
+| WAVE | Varios errores de accesibilidad en imágenes y estructura  |
+| Lighthouse Accessibility | Nivel de accesibilidad mejorable según la web |
+| Etiquetas ALT | Algunas imágenes pueden carecer de descripciones adecuadas |
 
-*![][image3]*
+<img width="1904" height="839" alt="Captura de pantalla 2026-05-13 132723" src="https://github.com/user-attachments/assets/de0ad427-54a8-4558-8909-da53c15e940b" />
 
 ### **Barreras encontradas**
 
@@ -58,7 +59,7 @@ Usé WAVE y la pestaña Accessibility de Lighthouse.
 **Problema 1 — Imágenes sin atributo alt descriptivo (WCAG 2.2, criterio 1.1.1)**
 
 Varias imágenes de la web tienen como texto alternativo el nombre del archivo original, simplemente están vacías. Esto es un problema grave porque un usuario con lector de pantalla escucha ese nombre de archivo en lugar de una descripción útil asociada a la imagen. El logo que aparece en la cabecera y el pie de página usa "Avatar \#02 sin fondo.png" como alt, lo cual no le dice nada a nadie.
-
+```
 \<\!-- como está ahora \--\>  
 \<img src="https://static.wixstatic.com/media/f30d39\_c577b028365e41ac913badfd327ca48d\~mv2.png"  
      alt="Avatar \#02 sin fondo.png"\>
@@ -66,19 +67,20 @@ Varias imágenes de la web tienen como texto alternativo el nombre del archivo o
 \<\!-- como debería estar \--\>  
 \<img src="https://static.wixstatic.com/media/f30d39\_c577b028365e41ac913badfd327ca48d\~mv2.png"  
      alt="Logo de Auténtico Döner Kebap"\>
-
+```
 Y para las imágenes decorativas del carrusel que no aportan información:
-
+```
 \<\!-- como está ahora \--\>  
 \<img src="f30d39\_2c44a80bd0a34782bb4aec8472ec6200\~mv2.jpg" alt="Vista General"\>
 
 \<\!-- como debería estar (descripción más útil) \--\>  
 \<img src="f30d39\_2c44a80bd0a34782bb4aec8472ec6200\~mv2.jpg"  
-     alt="Vista general del interior de uno de los locales de Auténtico Döner Kebap en Sevilla"\>  
+     alt="Vista general del interior de uno de los locales de Auténtico Döner Kebap en Sevilla"\>
+```
 **Problema 2 — Formulario de contacto sin etiquetas label (WCAG 2.2, criterio 1.3.1)**
 
 El formulario de la página de contacto está generado por Wix y los campos no tienen etiquetas \<label\> visibles asociadas correctamente. Solo hay un texto encima del formulario y un checkbox de "Acepto los términos y condiciones" sin que quede claro qué campos hay que rellenar. Para alguien que use lector de pantalla el formulario es prácticamente imposible de usar.
-
+```
 \<\!-- como está generado por Wix (sin labels asociados) \--\>  
 \<input type="text" placeholder="Nombre"\>  
 \<input type="email" placeholder="Email"\>  
@@ -99,12 +101,12 @@ El formulario de la página de contacto está generado por Wix y los campos no t
   \<input type="checkbox" name="terminos" required\>  
   Acepto los \<a href="/aviso-legal"\>términos y condiciones\</a\>  
 \</label\>
-
-## **Fase 3 \- Dimensión de Gobernanza y Ética** 
+```
+## **Fase 3 \ Dimensión de Gobernanza y Ética** 
 
 ### **Transparencia con las cookies**
 
-![][image4]
+<img width="1902" height="578" alt="Captura de pantalla 2026-05-13 133622" src="https://github.com/user-attachments/assets/d99c8369-cf51-4f55-aa38-9116463e4e31" />
 
 La web tiene aviso legal, política de privacidad y política de cookies enlazados en el pie de página, pero no aparece ningún banner de consentimiento de cookies al entrar. Esto es problemático porque la web usa scripts de terceros que colocan cookies antes de que el usuario haya dado su consentimiento. Según el RGPD, las cookies no esenciales no se pueden activar antes de que el usuario las acepte.
 
@@ -123,14 +125,14 @@ El formulario de contacto de la página /contact pide los siguientes datos:
 
 En este caso el formulario es bastante sencillo y no pide datos innecesarios, lo cual está bien. El problema es que al aceptar los términos el usuario no sabe exactamente a qué está consintiendo porque el enlace a los términos lleva a una página de aviso legal genérico que no especifica cómo se van a usar los datos del formulario.
 
-## **Fase 4 \- Propuesta de Refactorización (Green Coding)**
+## **Fase 4 \ Propuesta de Refactorización (Green Coding)**
 
 ### **Optimización de imágenes**
 
 Wix ya sirve algunas imágenes en AVIF automáticamente (se puede ver en las URLs con avif), lo cual es positivo. Ya que es un formato de imagen moderno y de próxima generación diseñado para ser mucho más eficiente.  El problema es que no lo hace con todas y las dimensiones no siempre están optimizadas para el dispositivo que las muestra.
 
 La propuesta sería, si se migrará a una plataforma propia, usar siempre el elemento \<picture\>con AVIF y WebP:
-
+```
 \<\!-- como lo sirve Wix actualmente (solo una versión de la imagen) \--\>  
 \<img src="https://static.wixstatic.com/media/f30d39\_a90c5e2cd4b44229875cfe3ae7834f67\~mv2.jpg/v1/fill/w\_1679,h\_534,al\_c,q\_85,usm\_0.66\_1.00\_0.01,enc\_avif,quality\_auto/Especias%20mini.jpg"  
      alt=""\>  
@@ -147,7 +149,8 @@ La propuesta sería, si se migrará a una plataforma propia, usar siempre el ele
        width="1679" height="534"  
        loading="lazy"\>  
 \</picture\>
-
+```
+```
 Sí implementaría Lazy Loading para todas las imágenes que están por debajo del primer pantallazo, ya que la web tiene bastante scroll y muchas imágenes que no hace falta cargar de entrada:
 
 \<\!-- logo del header: carga inmediata porque está visible desde el principio \--\>  
@@ -158,10 +161,10 @@ Sí implementaría Lazy Loading para todas las imágenes que están por debajo d
      alt="Vista general del local"  
      loading="lazy"  
      width="97" height="97"\>
-
+```
 ### **Reducción de peticiones**
 
-El problema principal aquí es Wix en sí. Al estar la web construida sobre esa plataforma, no hay manera de eliminar los scripts que Wix carga automáticamente. Si el negocio quisiera una web más eficiente tendría que migrar a una solución propia o a un CMS más ligero como WordPress con un tema minimalista, o directamente a HTML/CSS estático.
+El problema principal aquí es Wix en sí. Al estar la web construida sobre esa plataforma, no hay manera de eliminar los scripts que Wix carga automáticamente. Si el negocio quisiera una web más eficiente tendría que cambiar a una solución propia o a un CMS más ligero como WordPress con un tema minimalista, o directamente a HTML/CSS estático.
 
 Dentro de lo que se puede mejorar sin cambiar de plataforma: en Wix se pueden desactivar algunas aplicaciones y widgets instalados que no se usan. Si hubiera alguna app de Wix Market instalada y sin usar, eliminarla reduciría las peticiones.
 
@@ -172,12 +175,14 @@ html {
 }  
 **Comparativa estimada antes / después (si se migrara a web estática propia):**
 
-| Métrica | Situación actual (Wix) | Web estática optimizada |
-| ----- | ----- | ----- |
-| Peso total |  |  |
-| CO₂ por visita |  |  |
-| estimado |  |  |
-| Lighthouse Performance |  |  |
+| Métrica | Web creada con constructor visual (ej. Wix) | Web estática optimizada |
+|---|---|---|
+| Peso total aproximado | Alto (muchos scripts y recursos cargados automáticamente) | Bajo (solo archivos necesarios) |
+| Velocidad de carga | Media | Alta |
+| Consumo energético estimado | Mayor | Menor |
+| Lighthouse Performance | Variable / normalmente media | Alta si está bien optimizada |
+| Dependencia de terceros | Elevada | Reducida |
+| Control sobre optimización | Limitado | Completo |
 
 ### **Reflexión sobre la Paradoja de Jevons**
 
@@ -201,5 +206,3 @@ Para evitar eso haría tres cosas. Primero, contratar el hosting en un proveedor
 * RGPD — Reglamento UE 2016/679  
 * Sustainable Web Design: https://sustainablewebdesign.org  
 * Web auditada: https://www.autenticodonerkebap.com
-
-

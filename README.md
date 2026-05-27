@@ -130,7 +130,7 @@ El formulario de contacto de la página /contact pide los siguientes datos:
 
 En este caso el formulario es bastante sencillo y no pide datos innecesarios, lo cual está bien. El problema es que al aceptar los términos el usuario no sabe exactamente a qué está consintiendo porque el enlace a los términos lleva a una página de aviso legal genérico que no especifica cómo se van a usar los datos del formulario.
 
-# Fase 4 — Propuesta de Refactorización (Green Coding)
+# Fase 4 — Propuesta de Refactorización (unicamente lo destacado)
 
 ## Refactorización con HTML Semántico
 

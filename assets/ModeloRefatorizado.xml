@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<refactorizacion>
+  <!-- ============================================================
+       COMPARACIÓN 1 — ESTRUCTURA HTML
+       Wix genera solo divs genéricos sin semántica.
+       La propuesta usa etiquetas HTML5 con significado propio.
+  ============================================================ -->
+
+  <antes descripcion="Wix — solo divs genéricos, sin semántica">
+    <estructura>
+      <div class="site-root">
+        <div class="comp-header">
+          <div class="nav-wrapper">
+            <div class="menu-items">
+              <div>Inicio</div>
+              <div>Menú</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-content">
+          <div class="section-hero">
+            <div class="title-text">Auténtico Döner Kebap</div>
+          </div>
+          <div class="section-menu">
+            <div class="item-card">
+              <div>Döner Especial</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-wrapper">
+          <div>© 2026</div>
+        </div>
+      </div>
+    </estructura>
+
+    <!-- Imagen: sin alt útil, sin lazy loading, formato antiguo -->
+    <imagen>
+      <img
+        src="banner.jpg"
+        alt="Avatar #02 sin fondo.png"
+      />
+    </imagen>
+  </antes>
+
+  <!-- ============================================================
+       DESPUÉS — HTML semántico, accesible y optimizado
+  ============================================================ -->
+
+  <despues descripcion="Refactorizado — HTML semántico + imágenes optimizadas">
+    <estructura>
+      <body>
+        <header>
+          <nav>
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#menu">Menú</a></li>
+              <li><a href="#locales">Locales</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <section id="inicio">
+            <h1>Auténtico Döner Kebap</h1>
+            <p>Comida inspirada en la tradición turca.</p>
+          </section>
+
+          <section id="menu">
+            <article>
+              <h2>Döner Especial</h2>
+              <p>Carne marinada con especias tradicionales.</p>
+            </article>
+            <article>
+              <h2>Durum Mixto</h2>
+              <p>Ternera y pollo con verduras frescas.</p>
+            </article>
+            <article>
+              <h2>Cazuela Hankara</h2>
+              <p>Ternera,verduras, pollo y patatas.</p>
+            </article>
+          </section>
+        </main>
+
+        <!-- ============================================================
+            Sucesivamente, se podrían añadir más artículos al menú sin perder la estructura ni la semántica: 
+            De la siguiente forma
+             <article>
+                <h2>Producto</h2>
+                <p>Ingredientes principales</p>
+             </article>
+             ============================================================ -->
+
+        <footer>
+          <p>© 2026 Auténtico Döner Kebap</p>
+        </footer>
+      </body>
+    </estructura>
+
+    <!-- Imagen: alt descriptivo, lazy loading, AVIF + WebP con fallback -->
+    <imagen>
+      <picture>
+        <source
+          srcset="
+            especias-banner-480.avif 480w,
+            especias-banner-900.avif 900w,
+            especias-banner-1679.avif 1679w"
+          type="image/avif"
+        />
+        <source
+          srcset="
+            especias-banner-480.webp 480w,
+            especias-banner-900.webp 900w,
+            especias-banner-1679.webp 1679w"
+          type="image/webp"
+        />
+        <img
+          src="especias-banner-1679.jpg"
+          alt="Especias utilizadas en la preparación del auténtico Döner Kebap"
+          loading="lazy"
+          width="1679"
+          height="534"
+        />
+      </picture>
+    </imagen>
+  </despues>
+
+</refactorizacion>
